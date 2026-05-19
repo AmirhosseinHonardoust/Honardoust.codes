@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Shop Profit Predictor | honardoust.codes</title>
+  <meta name="description" content="A SQL + Python retail analytics project for predicting monthly coffee-shop profit using engineered location features, ElasticNet regression, diagnostics, feature importance, and candidate-site scoring." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/coffee-shop-profit-predictor.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Coffee Shop Profit Predictor | honardoust.codes" />
+  <meta property="og:description" content="A SQL + Python retail analytics project for predicting monthly coffee-shop profit using engineered location features, ElasticNet regression, diagnostics, feature importance, and candidate-site scoring." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/coffee-shop-profit-predictor.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Coffee-Shop-Profit-Predictor" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-006 / Business Analytics / Published</p>
+          <h1>Coffee Shop Profit Predictor</h1>
+          <p class="detail-lede">A SQL + Python retail analytics project for predicting monthly coffee-shop profit using engineered location features, ElasticNet regression, diagnostics, feature importance, and candidate-site scoring.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-006</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>Business Analytics</strong></div>
+          <div><span>Focus</span><strong>SQL + regression</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#skills">Skills</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-006 / question</p>
+          <h2>Technical question</h2>
+          <p>Can SQL feature engineering and interpretable regression support better coffee-shop site selection decisions?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-006 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Load training and candidate location CSV files into SQLite.</li>
+<li>Create SQL feature views for demand, competition, affordability, weekend traffic, and promotion effects.</li>
+<li>Train an ElasticNet regression model with standardized preprocessing.</li>
+<li>Evaluate with R², MAE, actual-vs-predicted plots, residual diagnostics, and feature importance.</li>
+<li>Score candidate locations and export prediction artifacts for decision review.</li>
+          </ol>
+          <div class="pipeline">
+            <span>location data</span>
+<i></i>
+<span>SQLite</span>
+<i></i>
+<span>SQL features</span>
+<i></i>
+<span>ElasticNet</span>
+<i></i>
+<span>diagnostics</span>
+<i></i>
+<span>candidate scoring</span>
+<i></i>
+<span>business insight</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="skills">
+          <p class="terminal-label">EXP-006 / skills demonstrated</p>
+          <h2>Data scientist skills shown</h2>
+          <div class="skill-proof-grid">
+            <div><span>SQL + Python integration</span><p>Uses SQLite for data preparation and Python for modeling, scoring, and visualization.</p></div>
+<div><span>Regression modeling</span><p>Applies ElasticNet to balance predictive performance with coefficient interpretability.</p></div>
+<div><span>Business analytics</span><p>Connects model outputs to site-selection decisions, rent pressure, events, pricing, and marketing strategy.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-006 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>SQL feature engineering</span><p>The project creates features such as demand adjusted for competition, weekend traffic, price-income interaction, and promotion-competition adjustment.</p></div>
+<div class="detail-mini-card"><span>Interpretability</span><p>Feature importance and standardized coefficients help explain why locations are predicted to be more or less profitable.</p></div>
+<div class="detail-mini-card"><span>Business output</span><p>The workflow produces metrics, profit predictions, scored candidate sites, diagnostic plots, and key business insights.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-006 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>SQLite</span><span>SQL</span><span>Pandas</span><span>Scikit-Learn</span><span>ElasticNet</span><span>Matplotlib</span><span>Joblib</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Coffee-Shop-Profit-Predictor" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-006 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>The dataset is simulated, so real deployment would need actual transaction, location, and market data.</li>
+<li>Linear regularized regression is interpretable but may miss nonlinear effects between foot traffic, rent, and events.</li>
+<li>Profit prediction should include uncertainty estimates and sensitivity analysis before business use.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-006 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add nonlinear models such as Random Forest, Gradient Boosting, or GAMs for comparison.</li>
+<li>Add confidence intervals or prediction uncertainty for candidate sites.</li>
+<li>Create a small Streamlit dashboard for site ranking and what-if analysis.</li>
+<li>Validate the feature assumptions against real retail data.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="image-captioning-cnn-lstm.html"><span>Previous</span>Image Captioning CNN-LSTM</a>
+          <a href="market-basket-analysis.html"><span>Next</span>Market Basket Analysis</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

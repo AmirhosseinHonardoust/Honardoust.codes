@@ -3,309 +3,639 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amir </title>
-  <meta name="description" content="Building intelligent systems that turn data into real decisions." />
+  <title>honardoust.codes | Lab Index</title>
+  <meta name="description" content="The technical lab index of Amir Honardoust: experiment records, ML evaluation notes, RAG systems, forecasting, and reproducible data science work." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
 
-  <style>
-    :root{
-      --bg:#0b0d10;
-      --card:#11141a;
-      --text:#e8edf4;
-      --muted:#aab6c5;
-      --line:rgba(255,255,255,0.10);
-      --link:#d6e2ff;
-      --shadow: 0 12px 30px rgba(0,0,0,0.35);
-      --radius: 18px;
-      --max: 980px;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body{
-      margin:0;
-      background: #0b0d10;
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
-      line-height: 1.6;
-    }
-    a{ color: var(--link); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+  <link rel="canonical" href="https://honardoust.codes/" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3">
+  <link rel="manifest" href="assets/site.webmanifest">
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 56px 18px 80px; }
+  <meta property="og:title" content="honardoust.codes | Lab Index" />
+  <meta property="og:description" content="Experiment records, ML evaluation notes, RAG systems, forecasting, and reproducible data science work by Amir Honardoust." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://honardoust.codes/" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
 
-    header{
-      position: relative;
-      display:flex; align-items:flex-start; justify-content:space-between;
-      gap: 18px; margin-bottom: 34px;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      /* full-screen width glow, centered */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      /* height and placement above header */
-      top: -140px;
-      height: 520px;
-      background:
-        radial-gradient(900px 420px at 20% 0%, rgba(120,140,255,0.20), transparent 50%),
-        radial-gradient(900px 420px at 80% 0%, rgba(70,220,200,0.12), transparent 50%);
-      z-index: -1;
-      pointer-events: none;
-    }
-    .brand h1{
-      font-size: clamp(34px, 3.5vw, 54px);
-      letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.05;
-    }
-    .tagline{
-      margin: 0 0 14px; color: var(--muted); font-size: 16px; max-width: 60ch;
-    }
-    .toplinks{ display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end; margin-top: 6px; }
-    .chip{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      padding: 10px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-    .chip:hover{ background: rgba(255,255,255,0.06); text-decoration:none; }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="honardoust.codes | Lab Index" />
+  <meta name="twitter:description" content="Technical lab index and experiment archive by Amir Honardoust." />
 
-    .grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; }
-    @media (max-width: 880px){
-      header{ flex-direction: column; }
-      .toplinks{ justify-content:flex-start; }
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .card h2{ margin: 0 0 10px; font-size: 18px; letter-spacing: -0.01em; }
-    .card p{ margin: 0; color: var(--muted); font-size: 15px; }
-    .section{ margin-top: 16px; }
-
-    .pillrow{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 12px; }
-    .pill{
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 10px;
-      font-size: 13px;
-      color: var(--muted);
-      background: rgba(0,0,0,0.10);
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media (max-width: 720px){ .projects{ grid-template-columns: 1fr; } }
-
-    .proj{
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(0,0,0,0.12);
-    }
-    .proj h3{ margin: 0 0 6px; font-size: 16px; letter-spacing: -0.01em; }
-    .proj p{ margin: 0 0 10px; color: var(--muted); font-size: 14px; }
-
-    .meta{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 8px; }
-    .meta span{
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 8px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .split{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    @media (max-width: 720px){ .split{ grid-template-columns: 1fr; } }
-
-    footer{ margin-top: 22px; color: rgba(255,255,255,0.45); font-size: 13px; }
-    .mutedlink{ color: rgba(255,255,255,0.70); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <h1>Amir Honardoust</h1>
-        <p class="tagline">building intelligent systems that turn data into real decisions</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="pillrow">
-          <span class="pill">machine learning systems</span>
-          <span class="pill">nlp</span>
-          <span class="pill">computer vision</span>
-          <span class="pill">time series</span>
-          <span class="pill">explainability</span>
-          <span class="pill">analytics</span>
+  <div class="noise"></div>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="honardoust.codes home">
+      <span class="brand-logo-card" aria-hidden="true">
+        <img src="assets/logo-icon.png" alt="">
+      </span>
+      <span>
+        <strong>honardoust.codes</strong>
+        <small>lab index</small>
+      </span>
+    </a>
+
+    <nav class="topnav" aria-label="Primary navigation">
+      <a href="#index">Index</a>
+      <a href="#featured">Featured</a>
+      <a href="#notes">Technical Essays</a>
+      <a href="#system-map">System Map</a>
+      <a href="https://honardoust.me/" target="_blank" rel="noopener">Main site ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="terminal-label">amir@honardoust.codes:~$ ./open-lab-index</p>
+        <h1>Technical work, organized as experiment records.</h1>
+        <p class="hero-copy">
+          A living archive for project reasoning, model evaluation, system design,
+          business analytics, reproducible workflows, and technical notes behind my data science portfolio.
+        </p>
+
+        <div class="command-search" aria-label="Visual command search">
+          <span>$</span>
+          <code>list experiments --status published --tag evaluation</code>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#index">Open lab index</a>
+          <a class="btn btn-secondary" href="#featured">Read EXP-001</a>
+          <a class="btn btn-ghost" href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
-      <nav class="toplinks">
-        <a class="chip" href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/honardoust/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="chip" href="mailto:amirhosseinhonardoust@gmail.com">Email</a>
-      </nav>
-    </header>
-
-    <div class="grid">
-      <section class="card">
-        <h2>About</h2>
-        <p>
-          I build end-to-end ML projects with a practical focus: clean pipelines, measurable evaluation,
-          and results that hold up outside a notebook. I like problems where clarity matters as much as accuracy.
-        </p>
-
-        <div class="section split">
-          <div class="proj">
-            <h3>What I optimize for</h3>
-            <p>reliability, interpretability, and systems you can iterate on</p>
-            <div class="meta">
-              <span>evaluation</span><span>metrics</span><span>error analysis</span><span>reproducibility</span>
-            </div>
-          </div>
-
-          <div class="proj">
-            <h3>What I’m building toward</h3>
-            <p>models and tooling that turn data into decisions with minimal friction</p>
-            <div class="meta">
-              <span>pipelines</span><span>deployment-ready</span><span>monitoring mindset</span><span>documentation</span>
-            </div>
-          </div>
+      <aside class="status-panel" aria-label="Lab status">
+        <div class="panel-toolbar">
+          <span></span><span></span><span></span>
+          <strong>lab.status</strong>
         </div>
-      </section>
-
-      <aside class="card">
-        <h2>Quick facts</h2>
-        <p>
-          Focus areas: NLP, CV, forecasting, applied analytics<br/>
-          Preferred stack: Python, PyTorch, scikit-learn, SQL<br/>
-          Open to: collaboration and strong problem statements
-        </p>
-
-        <div class="section">
-          <h2 style="margin-top:16px;">Contact</h2>
-          <p>
-            Best way to reach me: <a href="mailto:amirhosseinhonardoust@gmail.com">email</a><br/>
-            If you found a repo useful, feel free to reach out.
-          </p>
+        <div class="status-grid">
+          <div><span>records</span><strong>12</strong></div>
+          <div><span>experiments</span><strong>07</strong></div>
+          <div><span>notes</span><strong>05</strong></div>
+          <div><span>mode</span><strong>public</strong></div>
         </div>
+        <pre><code>{
+  "owner": "Amir Honardoust",
+  "role": "Data Scientist",
+  "format": "experiment archive",
+  "main_site": "honardoust.me"
+}</code></pre>
       </aside>
+    </section>
+
+    <section class="lab-index-section" id="index">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">01 / LAB INDEX</p>
+          <h2>Browse records like a technical database.</h2>
+        </div>
+        <p>
+          This is the central index. Each row has an ID, status, type, focus area,
+          and a direct source link.
+        </p>
+      </div>
+
+      <div class="lab-table" role="table" aria-label="Lab index records">
+        <div class="lab-row lab-head" role="row">
+          <span>ID</span>
+          <span>Record</span>
+          <span>Type</span>
+          <span>Status</span>
+          <span>Skills proven</span>
+          <span>Open</span>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-001</span>
+          <span>Graph-RAG Engine</span>
+          <span>AI System</span>
+          <span><mark class="published">Published</mark></span>
+          <span>NLP · RAG · Explainability · APIs</span>
+          <a href="projects/graph-rag-engine.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-002</span>
+          <span>Forecast Factory</span>
+          <span>Decision Tool</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Forecasting · Scenarios · Visualization</span>
+          <a href="projects/forecast-factory.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-003</span>
+          <span>Synthetic Data Artist</span>
+          <span>Evaluation</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Statistics · Data quality · Model comparison</span>
+          <a href="projects/synthetic-data-artist.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-004</span>
+          <span>Fake News Detector</span>
+          <span>NLP Pipeline</span>
+          <span><mark class="published">Published</mark></span>
+          <span>TF-IDF · Classification · Metrics</span>
+          <a href="projects/fake-news-detector.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-005</span>
+          <span>Image Captioning CNN-LSTM</span>
+          <span>Deep Learning</span>
+          <span><mark class="published">Published</mark></span>
+          <span>PyTorch · CNN · LSTM · BLEU</span>
+          <a href="projects/image-captioning-cnn-lstm.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-006</span>
+          <span>Coffee Shop Profit Predictor</span>
+          <span>Business Analytics</span>
+          <span><mark class="published">Published</mark></span>
+          <span>SQL · Regression · Feature engineering</span>
+          <a href="projects/coffee-shop-profit-predictor.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-007</span>
+          <span>Market Basket Analysis</span>
+          <span>Retail Analytics</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Apriori · FP-Growth · Association rules</span>
+          <a href="projects/market-basket-analysis.html">detail →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-001</span>
+          <span>Machine Learning Warning Systems</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Human-in-loop · Risk design · ML governance</span>
+          <a href="notes/machine-learning-warning-systems.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-002</span>
+          <span>Coverage Is the Silent Killer</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Data quality · Coverage · KPI reliability</span>
+          <a href="notes/coverage-is-the-silent-killer.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-003</span>
+          <span>KPI Denominator Truth</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>KPI design · Product analytics · Metrics</span>
+          <a href="notes/kpi-denominator-truth.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-004</span>
+          <span>Abstention Is a Product Feature</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Calibration · Thresholding · Human review</span>
+          <a href="notes/abstention-is-a-product-feature.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-005</span>
+          <span>Designing Hybrid AI Systems</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>RAG · Knowledge graphs · Explainable AI</span>
+          <a href="notes/designing-hybrid-ai-systems.html">read →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-record featured-record-carousel" id="featured" aria-label="Featured experiment records">
+      <div class="record-carousel-top">
+        <div>
+          <h2>Flip through selected experiment records.</h2>
+        </div>
+
+      </div>
+
+      <div class="record-stage" id="recordStage">
+          <article class="record-slide active" data-record-index="0" aria-hidden="false">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-001 · Graph-RAG Engine</h2>
+              </div>
+              <a class="record-link" href="projects/graph-rag-engine.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can retrieval paths make RAG answers more explainable and easier to trust?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Vector retrieval, graph expansion, citation-first generation, and an inspectable interface.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>API structure, retrieval flow, citation behavior, and Streamlit-based interaction.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Applied AI architecture, retrieval design, system thinking, and explainable outputs.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>documents</span>
+                <i></i>
+                <span>embeddings</span>
+                <i></i>
+                <span>graph expansion</span>
+                <i></i>
+                <span>citations</span>
+                <i></i>
+                <span>answer UI</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="1" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-002 · Forecast Factory</h2>
+              </div>
+              <a class="record-link" href="projects/forecast-factory.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>How can forecasting move from passive prediction to active scenario planning?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Prophet forecasting, SQL/CSV inputs, baseline comparison, and scenario simulation.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Forecast outputs, what-if controls, error metrics, exports, and visual decision support.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Time-series modeling, business scenario analysis, visualization, and model communication.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>data input</span>
+                <i></i>
+                <span>forecast model</span>
+                <i></i>
+                <span>scenario engine</span>
+                <i></i>
+                <span>metrics</span>
+                <i></i>
+                <span>decision view</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="2" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-003 · Synthetic Data Artist</h2>
+              </div>
+              <a class="record-link" href="projects/synthetic-data-artist.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Which synthetic data method better preserves the behavior of real tabular data?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Compare Copula and VAE generators using distribution, correlation, and visual evaluation.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Distribution overlap, correlation difference, PCA projection, pairplots, and reports.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Statistical evaluation, data quality thinking, model comparison, and research reporting.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>real data</span>
+                <i></i>
+                <span>generator</span>
+                <i></i>
+                <span>synthetic data</span>
+                <i></i>
+                <span>evaluation</span>
+                <i></i>
+                <span>report</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="3" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-004 · Fake News Detector</h2>
+              </div>
+              <a class="record-link" href="projects/fake-news-detector.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>How far can a clean classical NLP pipeline go for fake-vs-real news classification?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Text cleaning, TF-IDF features, Logistic Regression, evaluation, and Streamlit interface.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Saved model artifacts, metrics, charts, probability outputs, and real-time app behavior.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>NLP preprocessing, classification, baseline modeling, metrics, and applied app delivery.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>news text</span>
+                <i></i>
+                <span>TF-IDF</span>
+                <i></i>
+                <span>classifier</span>
+                <i></i>
+                <span>metrics</span>
+                <i></i>
+                <span>app</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="4" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-005 · Image Captioning CNN-LSTM</h2>
+              </div>
+              <a class="record-link" href="projects/image-captioning-cnn-lstm.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>How can visual features be translated into natural-language descriptions?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>ResNet-50 visual encoding, LSTM decoding, vocabulary building, training, and inference.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Training curves, BLEU evaluation, checkpoints, vocabulary, and generated captions.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Deep learning, multimodal modeling, PyTorch workflow, and sequence generation.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>image</span>
+                <i></i>
+                <span>CNN encoder</span>
+                <i></i>
+                <span>features</span>
+                <i></i>
+                <span>LSTM decoder</span>
+                <i></i>
+                <span>caption</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="5" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-006 · Coffee Shop Profit Predictor</h2>
+              </div>
+              <a class="record-link" href="projects/coffee-shop-profit-predictor.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can SQL features and interpretable regression support site-selection decisions?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>SQLite feature engineering, ElasticNet regression, diagnostics, and candidate scoring.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>R²/MAE metrics, residual plots, feature importance, and predicted profit by location.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>SQL, feature engineering, regression, business analytics, and model interpretability.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>location data</span>
+                <i></i>
+                <span>SQL features</span>
+                <i></i>
+                <span>ElasticNet</span>
+                <i></i>
+                <span>diagnostics</span>
+                <i></i>
+                <span>site ranking</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="6" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-007 · Market Basket Analysis</h2>
+              </div>
+              <a class="record-link" href="projects/market-basket-analysis.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can association-rule mining reveal interpretable retail co-purchase patterns?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Generate transactions, mine itemsets with Apriori/FP-Growth, and derive rules.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Support, confidence, lift, leverage, conviction, CSV outputs, and visual summaries.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Retail analytics, association rules, data mining, and interpretable pattern discovery.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>transactions</span>
+                <i></i>
+                <span>itemsets</span>
+                <i></i>
+                <span>rules</span>
+                <i></i>
+                <span>metrics</span>
+                <i></i>
+                <span>retail insight</span>
+            </div>
+          </article>
+      </div>
+
+      <div class="record-switcher-bar">
+        <button class="record-prev-modern record-cycle-button" type="button" id="recordPrevModern">
+          <strong class="arrow-orb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M19 12H7"></path>
+              <path d="M11 6l-6 6 6 6"></path>
+            </svg>
+          </strong>
+          <span>Previous record</span>
+        </button>
+
+        <button class="record-next-modern record-cycle-button" type="button" id="recordNextModern">
+          <span>Next record</span>
+          <strong class="arrow-orb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M5 12h12"></path>
+              <path d="M13 6l6 6-6 6"></path>
+            </svg>
+          </strong>
+        </button>
+      </div>
+
+      <div class="record-selector" aria-label="Featured record selector">
+          <button class="record-tab active" type="button" data-record-target="0" aria-label="Show EXP-001" aria-pressed="true">EXP-001</button>
+          <button class="record-tab" type="button" data-record-target="1" aria-label="Show EXP-002" aria-pressed="false">EXP-002</button>
+          <button class="record-tab" type="button" data-record-target="2" aria-label="Show EXP-003" aria-pressed="false">EXP-003</button>
+          <button class="record-tab" type="button" data-record-target="3" aria-label="Show EXP-004" aria-pressed="false">EXP-004</button>
+          <button class="record-tab" type="button" data-record-target="4" aria-label="Show EXP-005" aria-pressed="false">EXP-005</button>
+          <button class="record-tab" type="button" data-record-target="5" aria-label="Show EXP-006" aria-pressed="false">EXP-006</button>
+          <button class="record-tab" type="button" data-record-target="6" aria-label="Show EXP-007" aria-pressed="false">EXP-007</button>
+      </div>
+    </section>
+
+    <section class="notes-section" id="notes">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">03 / TECHNICAL ESSAYS</p>
+          <h2>Technical essays from my data science notebook.</h2>
+        </div>
+        <p>
+          These essays capture how I think about reliable data, model behavior,
+          evaluation, metrics, and AI systems beyond the code.
+        </p>
+      </div>
+
+      <div class="note-list">
+        <article>
+          <span>NOTE-001</span>
+          <h3><a href="notes/machine-learning-warning-systems.html">Machine Learning Warning Systems</a></h3>
+          <p>Why ML systems should warn instead of decide, with practical patterns for human agency, auditability, and risk-aware interfaces.</p>
+        </article>
+        <article>
+          <span>NOTE-002</span>
+          <h3><a href="notes/coverage-is-the-silent-killer.html">Coverage Is the Silent Killer</a></h3>
+          <p>How clean dashboards can tell false stories when data does not represent the full population, calendar, or process.</p>
+        </article>
+        <article>
+          <span>NOTE-003</span>
+          <h3><a href="notes/kpi-denominator-truth.html">KPI Denominator Truth</a></h3>
+          <p>Why ratio metrics fail when their denominator changes, and how to design more decision-safe KPI contracts.</p>
+        </article>
+        <article>
+          <span>NOTE-004</span>
+          <h3><a href="notes/abstention-is-a-product-feature.html">Abstention Is a Product Feature</a></h3>
+          <p>How selective prediction, calibration, and human review turn uncertainty into safer product design.</p>
+        </article>
+        <article>
+          <span>NOTE-005</span>
+          <h3><a href="notes/designing-hybrid-ai-systems.html">Designing Hybrid AI Systems</a></h3>
+          <p>How vector search, knowledge graphs, and RAG can work together to produce more explainable AI systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="system-map-section" id="system-map">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">04 / SYSTEM MAP</p>
+          <h2>How I think about data science systems.</h2>
+        </div>
+      </div>
+
+      <div class="system-map">
+        <div><span>01</span><strong>Problem</strong><p>Define the decision, uncertainty, and success criteria.</p></div>
+        <b></b>
+        <div><span>02</span><strong>Data</strong><p>Inspect, clean, transform, validate, and document assumptions.</p></div>
+        <b></b>
+        <div><span>03</span><strong>Model</strong><p>Train baselines, compare methods, and evaluate honestly.</p></div>
+        <b></b>
+        <div><span>04</span><strong>Interface</strong><p>Expose results through dashboards, APIs, reports, or tools.</p></div>
+        <b></b>
+        <div><span>05</span><strong>Decision</strong><p>Communicate limits, tradeoffs, and recommended next actions.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-panel">
+      <div>
+        <p class="terminal-label">amir@lab:~$ connect</p>
+        <h2>This is my technical lab for experiments, systems, and notes. My main portfolio lives on honardoust.me.</h2>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://honardoust.me/" target="_blank" rel="noopener">Main portfolio</a>
+        <a class="btn btn-secondary" href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/honardoust/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amir Honardoust · lab index</p>
+    <div>
+      <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Back to top</a>
+      <a href="https://honardoust.me/" target="_blank" rel="noopener">honardoust.me</a>
+      <a href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
     </div>
+  </footer>
 
-    <section class="card section">
-      <h2>Featured projects</h2>
-      <p>Selected work across NLP, vision, forecasting, and analytics.</p>
-
-      <div class="projects">
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Fake-News-Detector" target="_blank" rel="noreferrer">
-              Fake News Detector
-            </a>
-          </h3>
-          <p>End-to-end fake vs real news classification with TF-IDF + Logistic Regression, evaluation charts, and a Streamlit app.</p>
-          <div class="meta">
-            <span>nlp</span><span>tf-idf</span><span>logistic regression</span><span>streamlit</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Sentiment-Analysis-BERT" target="_blank" rel="noreferrer">
-              Sentiment Analysis with BERT
-            </a>
-          </h3>
-          <p>Fine-tuned BERT for tweet sentiment (negative/neutral/positive) with full evaluation: confusion matrix, ROC curves, and word clouds.</p>
-          <div class="meta">
-            <span>transformers</span><span>bert</span><span>text classification</span><span>evaluation</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Image-Captioning-CNN-LSTM" target="_blank" rel="noreferrer">
-              Image Captioning (CNN + LSTM)
-            </a>
-          </h3>
-          <p>CNN encoder (ResNet-50) + LSTM decoder in PyTorch, with preprocessing, vocabulary building, BLEU evaluation, and inference examples.</p>
-          <div class="meta">
-            <span>computer vision</span><span>pytorch</span><span>resnet</span><span>bleu</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Stock-LSTM-Forecasting" target="_blank" rel="noreferrer">
-              Stock LSTM Forecasting
-            </a>
-          </h3>
-          <p>LSTM forecasting on OHLCV data with sliding windows, early stopping, and metrics (RMSE/MAE/MAPE) plus clean prediction plots.</p>
-          <div class="meta">
-            <span>time series</span><span>lstm</span><span>pytorch</span><span>forecasting</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Coffee-Shop-Profit-Predictor" target="_blank" rel="noreferrer">
-              Coffee Shop Profit Predictor
-            </a>
-          </h3>
-          <p>Data-driven site selection: SQL (SQLite) prep + regression modeling to estimate monthly profit, with feature importance and diagnostics.</p>
-          <div class="meta">
-            <span>sql</span><span>regression</span><span>elasticnet</span><span>visualization</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <h3>
-            <a href="https://github.com/AmirhosseinHonardoust/Market-Basket-Analysis" target="_blank" rel="noreferrer">
-              Market Basket Analysis
-            </a>
-          </h3>
-          <p>Generate synthetic transactions, mine frequent itemsets (Apriori/FP-Growth), derive association rules, and export clean charts/CSVs.</p>
-          <div class="meta">
-            <span>association rules</span><span>apriori</span><span>fp-growth</span><span>analytics</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card section">
-
-      <div class="projects">
-        <div class="proj">
-          <h3><a class="mutedlink" href="#" onclick="return false;">How I evaluate text classifiers</a></h3>
-          <p>Metrics, confusion matrices, and what I look for beyond accuracy.</p>
-          <div class="meta"><span>evaluation</span><span>nlp</span><span>error analysis</span></div>
-        </div>
-        <div class="proj">
-          <h3><a class="mutedlink" href="#" onclick="return false;">Forecasting: what usually breaks</a></h3>
-          <p>Common leakage traps, windowing mistakes, and what to validate early.</p>
-          <div class="meta"><span>time series</span><span>validation</span><span>baselines</span></div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div>Last updated: <span id="lastUpdated"></span></div>
-      <script>
-        const d = new Date();
-        const fmt = d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
-        document.getElementById("lastUpdated").textContent = fmt;
-      </script>
-    </footer>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synthetic Data Artist | honardoust.codes</title>
+  <meta name="description" content="A research-style comparison of Gaussian Copula and Variational Autoencoder methods for synthetic tabular data, evaluated with distribution overlap, correlation similarity, PCA projection, pairplots, metrics, and automated reports." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/synthetic-data-artist.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Synthetic Data Artist | honardoust.codes" />
+  <meta property="og:description" content="A research-style comparison of Gaussian Copula and Variational Autoencoder methods for synthetic tabular data, evaluated with distribution overlap, correlation similarity, PCA projection, pairplots, metrics, and automated reports." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/synthetic-data-artist.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Synthetic-Data-Artist" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-003 / Evaluation / Published</p>
+          <h1>Synthetic Data Artist</h1>
+          <p class="detail-lede">A research-style comparison of Gaussian Copula and Variational Autoencoder methods for synthetic tabular data, evaluated with distribution overlap, correlation similarity, PCA projection, pairplots, metrics, and automated reports.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-003</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>Evaluation</strong></div>
+          <div><span>Focus</span><strong>Synthetic tabular data</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-003 / question</p>
+          <h2>Technical question</h2>
+          <p>Which synthetic data approach better preserves the statistical behavior of a real tabular dataset?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-003 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Train Gaussian Copula and VAE generators on the same tabular dataset.</li>
+<li>Generate comparable synthetic datasets.</li>
+<li>Evaluate fidelity using distribution overlap and correlation difference.</li>
+<li>Use PCA projection and pairplots for visual comparison.</li>
+<li>Produce automated visual reports.</li>
+          </ol>
+          <div class="pipeline">
+            <span>real data</span>
+<i></i>
+<span>preprocessing</span>
+<i></i>
+<span>copula</span>
+<i></i>
+<span>VAE</span>
+<i></i>
+<span>synthetic datasets</span>
+<i></i>
+<span>evaluation suite</span>
+<i></i>
+<span>report</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-003 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Evaluation metrics</span><p>The README defines distribution overlap, correlation difference, PCA projection, and pairplot comparison.</p></div>
+<div class="detail-mini-card"><span>Quantitative result</span><p>The comparison reports Copula with higher mean distribution overlap and lower mean correlation difference than VAE.</p></div>
+<div class="detail-mini-card"><span>Reproducibility</span><p>The project includes config, reports, outputs, and separate generated synthetic datasets.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-003 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>PyTorch</span><span>Scikit-Learn</span><span>SciPy</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Jinja2</span><span>YAML</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Synthetic-Data-Artist" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-003 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>Synthetic data quality depends strongly on dataset type, sample size, and feature distributions.</li>
+<li>Privacy leakage testing is not the same as fidelity testing and would need separate analysis.</li>
+<li>Utility should also be tested downstream by training models on synthetic data and testing on real data.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-003 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add privacy risk metrics.</li>
+<li>Add downstream ML utility tests.</li>
+<li>Add more synthetic data baselines.</li>
+<li>Turn the evaluation process into a reusable checklist.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="forecast-factory.html"><span>Previous</span>Forecast Factory</a>
+          <a href="fake-news-detector.html"><span>Next</span>Fake News Detector</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

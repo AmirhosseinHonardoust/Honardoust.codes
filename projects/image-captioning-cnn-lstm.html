@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Captioning CNN-LSTM | honardoust.codes</title>
+  <meta name="description" content="An end-to-end image captioning project using a ResNet-50 CNN encoder and LSTM decoder in PyTorch, with vocabulary building, preprocessing, training, BLEU evaluation, inference, checkpoints, and visual outputs." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/image-captioning-cnn-lstm.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Image Captioning CNN-LSTM | honardoust.codes" />
+  <meta property="og:description" content="An end-to-end image captioning project using a ResNet-50 CNN encoder and LSTM decoder in PyTorch, with vocabulary building, preprocessing, training, BLEU evaluation, inference, checkpoints, and visual outputs." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/image-captioning-cnn-lstm.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Image-Captioning-CNN-LSTM" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-005 / Deep Learning / Published</p>
+          <h1>Image Captioning CNN-LSTM</h1>
+          <p class="detail-lede">An end-to-end image captioning project using a ResNet-50 CNN encoder and LSTM decoder in PyTorch, with vocabulary building, preprocessing, training, BLEU evaluation, inference, checkpoints, and visual outputs.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-005</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>Deep Learning</strong></div>
+          <div><span>Focus</span><strong>Vision + language</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-005 / question</p>
+          <h2>Technical question</h2>
+          <p>How can visual features be translated into natural-language descriptions through a reproducible multimodal pipeline?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-005 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Use a pretrained ResNet-50 CNN encoder for visual feature extraction.</li>
+<li>Use an LSTM decoder with embeddings, dropout, and teacher forcing.</li>
+<li>Build a vocabulary and tokenize captions.</li>
+<li>Train with cross-entropy and Adam.</li>
+<li>Evaluate with BLEU-1 to BLEU-4 and save artifacts.</li>
+          </ol>
+          <div class="pipeline">
+            <span>images</span>
+<i></i>
+<span>CNN encoder</span>
+<i></i>
+<span>visual features</span>
+<i></i>
+<span>LSTM decoder</span>
+<i></i>
+<span>captions</span>
+<i></i>
+<span>BLEU evaluation</span>
+<i></i>
+<span>inference</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-005 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Model design</span><p>The README lists a pretrained ResNet-50 encoder and LSTM decoder with embeddings, dropout, and teacher forcing.</p></div>
+<div class="detail-mini-card"><span>Evaluation</span><p>Validation uses BLEU-1 through BLEU-4 and saves metrics.</p></div>
+<div class="detail-mini-card"><span>Reproducibility</span><p>The repo structure includes preprocessing, training, inference scripts, checkpoints, vocabulary, curves, and metrics.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-005 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>PyTorch</span><span>ResNet-50</span><span>LSTM</span><span>NLTK</span><span>BLEU</span><span>Matplotlib</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Image-Captioning-CNN-LSTM" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-005 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>Toy datasets are useful for testing but not enough to prove real-world caption quality.</li>
+<li>Captioning systems should be evaluated for hallucination, bias, and failure cases, not only BLEU.</li>
+<li>Transformer-based encoder-decoder models would be a stronger modern baseline.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-005 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add qualitative failure-case analysis.</li>
+<li>Compare against transformer captioning baselines.</li>
+<li>Add attention visualization.</li>
+<li>Train on a larger benchmark dataset.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="fake-news-detector.html"><span>Previous</span>Fake News Detector</a>
+          <a href="coffee-shop-profit-predictor.html"><span>Next</span>Coffee Shop Profit Predictor</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

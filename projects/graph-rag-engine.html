@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graph-RAG Engine | honardoust.codes</title>
+  <meta name="description" content="An explainable retrieval-augmented generation system that combines graph intelligence, vector search, citations, a FastAPI backend, a Streamlit interface, FAISS, and an in-memory knowledge graph." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/graph-rag-engine.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Graph-RAG Engine | honardoust.codes" />
+  <meta property="og:description" content="An explainable retrieval-augmented generation system that combines graph intelligence, vector search, citations, a FastAPI backend, a Streamlit interface, FAISS, and an in-memory knowledge graph." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/graph-rag-engine.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Graph-RAG-Engine" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-001 / AI System / Published</p>
+          <h1>Graph-RAG Engine</h1>
+          <p class="detail-lede">An explainable retrieval-augmented generation system that combines graph intelligence, vector search, citations, a FastAPI backend, a Streamlit interface, FAISS, and an in-memory knowledge graph.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-001</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>AI System</strong></div>
+          <div><span>Focus</span><strong>Retrieval + citations</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-001 / question</p>
+          <h2>Technical question</h2>
+          <p>Can retrieval paths make RAG answers more explainable, grounded, and easier to inspect?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-001 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Build a document/chunk/concept knowledge graph.</li>
+<li>Use FAISS for dense semantic retrieval.</li>
+<li>Expand retrieval with graph relationships and PageRank-style weighting.</li>
+<li>Return answer text with citations and reasoning paths.</li>
+<li>Expose the workflow through FastAPI endpoints and a Streamlit UI.</li>
+          </ol>
+          <div class="pipeline">
+            <span>documents</span>
+<i></i>
+<span>chunks</span>
+<i></i>
+<span>embeddings</span>
+<i></i>
+<span>knowledge graph</span>
+<i></i>
+<span>hybrid retriever</span>
+<i></i>
+<span>citations</span>
+<i></i>
+<span>answer UI</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-001 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Architecture</span><p>Documents flow through chunking, embeddings, graph construction, hybrid retrieval, and a FastAPI + Streamlit frontend.</p></div>
+<div class="detail-mini-card"><span>Explainability</span><p>Responses are designed to include citations and graph paths explaining why sources were chosen.</p></div>
+<div class="detail-mini-card"><span>Extensibility</span><p>The README describes paths to Neo4j, LLM integration, vector DBs, and graph neural recommendations.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-001 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>FastAPI</span><span>Streamlit</span><span>FAISS</span><span>NetworkX</span><span>Sentence-Transformers</span><span>NumPy</span><span>Pandas</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Graph-RAG-Engine" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-001 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>The graph layer is in-memory, so production persistence would need Neo4j or another graph database.</li>
+<li>The project is positioned as an MVP, so deployment, authentication, monitoring, and feedback-based evaluation would be future work.</li>
+<li>Answer quality should be evaluated with retrieval metrics, citation accuracy checks, and out-of-domain documents.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-001 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add systematic retrieval evaluation.</li>
+<li>Add Neo4j-backed graph persistence.</li>
+<li>Add LLM-generated abstractive answers with citation validation.</li>
+<li>Dockerize and deploy a demo.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="../index.html#index"><span>Back</span>Lab index</a>
+          <a href="forecast-factory.html"><span>Next</span>Forecast Factory</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
