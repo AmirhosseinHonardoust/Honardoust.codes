@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Recommendation System | honardoust.codes</title>
+  <meta name="description" content="A recommender-system demo with synthetic movie ratings, content-based similarity, corrected collaborative SVD scoring, hybrid blending, baseline comparisons, alpha sweep evaluation, structured recommendation outputs, tests, and CI." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/movie-recommendation-system.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Movie Recommendation System | honardoust.codes" />
+  <meta property="og:description" content="A recommender-system demo with synthetic movie ratings, content-based similarity, corrected collaborative SVD scoring, hybrid blending, baseline comparisons, alpha sweep evaluation, structured recommendation outputs, tests, and CI." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/movie-recommendation-system.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Movie-Recommendation-System" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-005 / Recommender System / Published</p>
+          <h1>Movie Recommendation System</h1>
+          <p class="detail-lede">A recommender-system demo with synthetic movie ratings, content-based similarity, corrected collaborative SVD scoring, hybrid blending, baseline comparisons, alpha sweep evaluation, structured recommendation outputs, tests, and CI.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-005</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>Recommender System</strong></div>
+          <div><span>Focus</span><strong>Recommendation evaluation</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-005 / question</p>
+          <h2>Technical question</h2>
+          <p>When does a hybrid recommender actually beat simple recommendation baselines?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-005 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Generate deterministic synthetic movies and user ratings.</li>
+            <li>Create train/test splits and user-item matrices.</li>
+            <li>Build content-based recommendations with TF-IDF and cosine similarity.</li>
+            <li>Build collaborative recommendations with corrected TruncatedSVD reconstruction.</li>
+            <li>Compare hybrid blends across alpha values from 0.0 to 1.0.</li>
+            <li>Report baselines and structured per-user recommendation outputs with short reasons.</li>
+          </ol>
+          <div class="pipeline">
+            <span>movies</span>
+            <i></i>
+            <span>ratings</span>
+            <i></i>
+            <span>split</span>
+            <i></i>
+            <span>content model</span>
+            <i></i>
+            <span>SVD model</span>
+            <i></i>
+            <span>hybrid sweep</span>
+            <i></i>
+            <span>recommendations</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-005 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Baselines</span><p>Bayesian-average, popularity, average-rating, positive-count, and random baselines make model quality honest.</p></div>
+            <div class="detail-mini-card"><span>Alpha sweep</span><p>Hybrid weights are measured instead of guessed, with the current synthetic dataset favoring content-only blending.</p></div>
+            <div class="detail-mini-card"><span>Outputs</span><p>Recommendation CSVs include rank, movie ID, title, genres, score, and reason fields.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-005 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>matplotlib</span><span>unittest</span><span>GitHub Actions</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Movie-Recommendation-System" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-005 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>The dataset is synthetic and should not be interpreted as real user preference behavior.</li>
+            <li>The current best model can be a simple baseline, which is intentionally documented rather than hidden.</li>
+            <li>Production recommenders would need real interaction logs, ranking experiments, cold-start handling, and online evaluation.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-005 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add optional MovieLens support.</li>
+            <li>Add item/user cold-start diagnostics.</li>
+            <li>Add ranking diversity and novelty metrics.</li>
+            <li>Add a small recommendation explorer UI.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="../index.html#index"><span>Back</span>Lab index</a>
+          <a href="fake-news-detector.html"><span>Next</span>Fake News Detector</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

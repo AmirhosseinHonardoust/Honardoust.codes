@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Underwriting Decision Safety Lab | honardoust.codes</title>
+  <meta name="description" content="A decision-safety lab for underwriting workflows with corrected calibration, abstention policy design, validation, coverage-quality tradeoffs, slice reporting, and a Streamlit review dashboard." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/underwriting-decision-safety-lab.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Underwriting Decision Safety Lab | honardoust.codes" />
+  <meta property="og:description" content="A decision-safety lab for underwriting workflows with corrected calibration, abstention policy design, validation, coverage-quality tradeoffs, slice reporting, and a Streamlit review dashboard." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/underwriting-decision-safety-lab.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Underwriting-Decision-Safety-Lab" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-001 / Decision Safety / Published</p>
+          <h1>Underwriting Decision Safety Lab</h1>
+          <p class="detail-lede">A decision-safety lab for underwriting workflows with corrected calibration, abstention policy design, validation, coverage-quality tradeoffs, slice reporting, and a Streamlit review dashboard.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-001</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>Decision Safety</strong></div>
+          <div><span>Focus</span><strong>Calibration + abstention</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-001 / question</p>
+          <h2>Technical question</h2>
+          <p>Can an underwriting model know when to defer uncertain decisions to human review?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-001 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Validate the input dataset before schema inference and model training.</li>
+            <li>Train a scikit-learn model that outputs underwriting approval probabilities.</li>
+            <li>Evaluate probability quality with corrected ECE, Brier score, ROC-AUC, PR-AUC, and baseline metrics.</li>
+            <li>Generate abstention policies that trade off coverage, auto-decision quality, and human review volume.</li>
+            <li>Report slice-level review rates, error rates, false approval/rejection rates, and calibration diagnostics.</li>
+            <li>Expose results through pipeline artifacts and a Streamlit review dashboard.</li>
+          </ol>
+          <div class="pipeline">
+            <span>loan data</span>
+            <i></i>
+            <span>validation</span>
+            <i></i>
+            <span>probability model</span>
+            <i></i>
+            <span>calibration</span>
+            <i></i>
+            <span>abstention</span>
+            <i></i>
+            <span>slice report</span>
+            <i></i>
+            <span>review UI</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-001 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Calibration</span><p>Expected Calibration Error compares predicted approval probability against observed approval rate, with reliability diagrams for inspection.</p></div>
+            <div class="detail-mini-card"><span>Decision safety</span><p>Coverage curves and policy variants show when the system can automate and when it should defer to review.</p></div>
+            <div class="detail-mini-card"><span>Slice reporting</span><p>Slice artifacts summarize review rate, auto-decision behavior, error rates, and calibration by applicant bands.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-001 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>pandas</span><span>scikit-learn</span><span>Streamlit</span><span>matplotlib</span><span>joblib</span><span>unittest</span><span>GitHub Actions</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Underwriting-Decision-Safety-Lab" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-001 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>The project is a portfolio demo, not a production underwriting system.</li>
+            <li>The included dataset and policies do not certify fairness, compliance, or deployability.</li>
+            <li>Real lending use would require governance, monitoring, audit trails, security controls, and legal review.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-001 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add drift monitoring and model-card metadata.</li>
+            <li>Add deeper fairness and subgroup analysis.</li>
+            <li>Add a FastAPI scoring endpoint and Docker deployment path.</li>
+            <li>Connect reviewer feedback to policy and calibration monitoring.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="../index.html#index"><span>Back</span>Lab index</a>
+          <a href="financial-fraud-risk-engine.html"><span>Next</span>Financial Fraud Risk Engine</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

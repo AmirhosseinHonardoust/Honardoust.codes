@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graph-RAG Engine | honardoust.codes</title>
+  <meta name="description" content="An explainable retrieval-augmented generation system that combines vector search, graph expansion, citation-first answers, optional LLM generation, retrieval evaluation, FastAPI, and a Streamlit interface." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://honardoust.codes/projects/graph-rag-engine.html" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
+  <meta property="og:title" content="Graph-RAG Engine | honardoust.codes" />
+  <meta property="og:description" content="An explainable retrieval-augmented generation system that combines vector search, graph expansion, citation-first answers, optional LLM generation, retrieval evaluation, FastAPI, and a Streamlit interface." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://honardoust.codes/projects/graph-rag-engine.html" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <main class="detail-main">
+    <nav class="detail-nav" aria-label="Project navigation">
+      <a href="../index.html">← Lab index</a>
+      <a href="https://github.com/AmirhosseinHonardoust/Graph-RAG-Engine" target="_blank" rel="noopener">Repository ↗</a>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-title-grid">
+        <div>
+          <p class="detail-kicker">EXP-003 / AI System / Published</p>
+          <h1>Graph-RAG Engine</h1>
+          <p class="detail-lede">An explainable retrieval-augmented generation system that combines vector search, graph expansion, citation-first answers, optional LLM generation, retrieval evaluation, FastAPI, and a Streamlit interface.</p>
+        </div>
+
+        <aside class="detail-metadata" aria-label="Project metadata">
+          <div><span>ID</span><strong>EXP-003</strong></div>
+          <div><span>Status</span><strong>Published</strong></div>
+          <div><span>Type</span><strong>AI System</strong></div>
+          <div><span>Focus</span><strong>Retrieval + citations</strong></div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="detail-content">
+      <aside class="detail-sidebar" aria-label="Page sections">
+        <a href="#question">Question</a>
+        <a href="#method">Method</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#stack">Stack</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#next">Next</a>
+      </aside>
+
+      <article class="detail-article">
+        <section class="detail-section-card" id="question">
+          <p class="terminal-label">EXP-003 / question</p>
+          <h2>Technical question</h2>
+          <p>Can retrieval paths make RAG answers more explainable, grounded, and easier to inspect?</p>
+        </section>
+
+        <section class="detail-section-card" id="method">
+          <p class="terminal-label">EXP-003 / method</p>
+          <h2>Method and workflow</h2>
+          <ol>
+            <li>Load and split documents into retrievable chunks.</li>
+            <li>Build embeddings and FAISS-based semantic search.</li>
+            <li>Construct concept and chunk relationships in an inspectable graph layer.</li>
+            <li>Expand retrieval results with graph neighbors and ranking logic.</li>
+            <li>Return extractive or optional LLM answers with source citations.</li>
+            <li>Evaluate retrieval behavior using golden queries and automated tests.</li>
+          </ol>
+          <div class="pipeline">
+            <span>documents</span>
+            <i></i>
+            <span>chunks</span>
+            <i></i>
+            <span>embeddings</span>
+            <i></i>
+            <span>knowledge graph</span>
+            <i></i>
+            <span>hybrid retriever</span>
+            <i></i>
+            <span>citations</span>
+            <i></i>
+            <span>answer UI</span>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="evidence">
+          <p class="terminal-label">EXP-003 / evidence</p>
+          <h2>Evidence of work</h2>
+          <div class="detail-grid-3">
+            <div class="detail-mini-card"><span>Hybrid retrieval</span><p>Vector search and graph expansion work together to improve context discovery and inspectability.</p></div>
+            <div class="detail-mini-card"><span>Evaluation</span><p>Golden-query metrics make retrieval quality measurable instead of anecdotal.</p></div>
+            <div class="detail-mini-card"><span>Interface</span><p>FastAPI and Streamlit layers make the system usable as a small RAG application.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-section-card" id="stack">
+          <p class="terminal-label">EXP-003 / stack</p>
+          <h2>Technical stack</h2>
+          <div class="tag-row">
+            <span>Python</span><span>FastAPI</span><span>Streamlit</span><span>FAISS</span><span>NetworkX</span><span>Sentence-Transformers</span><span>NumPy</span><span>pandas</span>
+          </div>
+          <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Graph-RAG-Engine" target="_blank" rel="noopener">Open repository ↗</a>
+        </section>
+
+        <section class="detail-section-card" id="limitations">
+          <p class="terminal-label">EXP-003 / limitations</p>
+          <h2>Limitations and honesty check</h2>
+          <ul>
+            <li>The graph layer is in-memory and would need persistence such as Neo4j for larger deployments.</li>
+            <li>Answer quality still depends on document coverage and retrieval quality.</li>
+            <li>Production use would need authentication, monitoring, cost controls, and citation validation.</li>
+          </ul>
+        </section>
+
+        <section class="detail-section-card" id="next">
+          <p class="terminal-label">EXP-003 / next</p>
+          <h2>Next improvements</h2>
+          <ul>
+            <li>Add persistent graph storage.</li>
+            <li>Add larger benchmark corpora and citation-accuracy tests.</li>
+            <li>Add Docker deployment and API documentation.</li>
+            <li>Add feedback-based retrieval tuning.</li>
+          </ul>
+        </section>
+
+        <nav class="next-projects" aria-label="Adjacent project records">
+          <a href="../index.html#index"><span>Back</span>Lab index</a>
+          <a href="synthetic-data-artist.html"><span>Next</span>Synthetic Data Artist</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

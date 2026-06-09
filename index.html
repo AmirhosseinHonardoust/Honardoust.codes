@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amir Honardoust | Lab Index</title>
+  <meta name="description" content="The technical lab index of Amir Honardoust: decision-safety systems, fraud-risk workflows, RAG engines, synthetic data evaluation, recommender systems, NLP, and reproducible data science work." />
+  <meta name="author" content="Amir Honardoust" />
+  <meta name="theme-color" content="#030712" />
+
+  <link rel="canonical" href="https://honardoust.codes/" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <meta property="og:title" content="honardoust.codes | Lab Index" />
+  <meta property="og:description" content="Decision-safety systems, fraud-risk workflows, RAG engines, synthetic data evaluation, recommender systems, NLP, and reproducible data science work by Amir Honardoust." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://honardoust.codes/" />
+  <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="honardoust.codes | Lab Index" />
+  <meta name="twitter:description" content="Technical lab index and experiment archive by Amir Honardoust." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="noise"></div>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="honardoust.codes home">
+      <span class="brand-logo-card" aria-hidden="true">
+        <img src="assets/logo-icon.png" alt="">
+      </span>
+      <span>
+        <strong>Amir Honardoust</strong>
+        <small>lab index</small>
+      </span>
+    </a>
+
+    <nav class="topnav" aria-label="Primary navigation">
+      <a href="#index">Index</a>
+      <a href="#featured">Featured</a>
+      <a href="#notes">Technical Essays</a>
+      <a href="#system-map">System Map</a>
+      <a href="https://honardoust.me/" target="_blank" rel="noopener">Main site ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="terminal-label">amir@honardoust.codes:~$ ./open-lab-index</p>
+        <h1>Technical work, organized as experiment records.</h1>
+        <p class="hero-copy">
+          A living archive for project reasoning, model evaluation, system design,
+          risk workflows, reproducible experiments, and technical notes behind my data science portfolio.
+        </p>
+
+        <div class="command-search" aria-label="Visual command search">
+          <span>$</span>
+          <code>list experiments --status published --tag evaluation</code>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#index">Open lab index</a>
+          <a class="btn btn-secondary" href="#featured">Read EXP-001</a>
+          <a class="btn btn-ghost" href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="status-panel" aria-label="Lab status">
+        <div class="panel-toolbar">
+          <span></span><span></span><span></span>
+          <strong>lab.status</strong>
+        </div>
+        <div class="status-grid">
+          <div><span>records</span><strong>12</strong></div>
+          <div><span>experiments</span><strong>07</strong></div>
+          <div><span>notes</span><strong>05</strong></div>
+          <div><span>mode</span><strong>public</strong></div>
+        </div>
+        <pre><code>{
+  "owner": "Amir Honardoust",
+  "role": "Data Scientist",
+  "format": "experiment archive",
+  "main_site": "honardoust.me"
+}</code></pre>
+      </aside>
+    </section>
+
+    <section class="lab-index-section" id="index">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">01 / LAB INDEX</p>
+          <h2>Browse records like a technical database.</h2>
+        </div>
+        <p>
+          This is the central index. Each row has an ID, status, type, focus area,
+          and a direct source link.
+        </p>
+      </div>
+
+      <div class="lab-table" role="table" aria-label="Lab index records">
+        <div class="lab-row lab-head" role="row">
+          <span>ID</span>
+          <span>Record</span>
+          <span>Type</span>
+          <span>Status</span>
+          <span>Skills proven</span>
+          <span>Open</span>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-001</span>
+          <span>Underwriting Decision Safety Lab</span>
+          <span>Decision Safety</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Calibration · Abstention · Validation · Slices</span>
+          <a href="projects/underwriting-decision-safety-lab.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-002</span>
+          <span>Financial Fraud Risk Engine</span>
+          <span>Risk Modeling</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Fraud ML · Thresholds · SHAP · Reason codes</span>
+          <a href="projects/financial-fraud-risk-engine.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-003</span>
+          <span>Graph-RAG Engine</span>
+          <span>AI System</span>
+          <span><mark class="published">Published</mark></span>
+          <span>NLP · RAG · Graph retrieval · APIs</span>
+          <a href="projects/graph-rag-engine.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-004</span>
+          <span>Synthetic Data Artist</span>
+          <span>Evaluation Lab</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Copula · VAE · Data quality · Privacy proxy</span>
+          <a href="projects/synthetic-data-artist.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-005</span>
+          <span>Movie Recommendation System</span>
+          <span>Recommender System</span>
+          <span><mark class="published">Published</mark></span>
+          <span>TF-IDF · SVD · Baselines · Alpha sweep</span>
+          <a href="projects/movie-recommendation-system.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-006</span>
+          <span>Fake News Detector</span>
+          <span>NLP Pipeline</span>
+          <span><mark class="published">Published</mark></span>
+          <span>TF-IDF · Classification · Evaluation · App</span>
+          <a href="projects/fake-news-detector.html">detail →</a>
+        </div>
+
+        <div class="lab-row" role="row">
+          <span class="id">EXP-007</span>
+          <span>Coffee Shop Profit Predictor</span>
+          <span>Business Analytics</span>
+          <span><mark class="published">Published</mark></span>
+          <span>SQL · Regression · CV · Candidate scoring</span>
+          <a href="projects/coffee-shop-profit-predictor.html">detail →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-001</span>
+          <span>Machine Learning Warning Systems</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Human-in-loop · Risk design · ML governance</span>
+          <a href="notes/machine-learning-warning-systems.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-002</span>
+          <span>Coverage Is the Silent Killer</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Data quality · Coverage · KPI reliability</span>
+          <a href="notes/coverage-is-the-silent-killer.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-003</span>
+          <span>KPI Denominator Truth</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>KPI design · Product analytics · Metrics</span>
+          <a href="notes/kpi-denominator-truth.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-004</span>
+          <span>Abstention Is a Product Feature</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>Calibration · Thresholding · Human review</span>
+          <a href="notes/abstention-is-a-product-feature.html">read →</a>
+        </div>
+
+        <div class="lab-row note-row-link" role="row">
+          <span class="id">NOTE-005</span>
+          <span>Designing Hybrid AI Systems</span>
+          <span>Essay</span>
+          <span><mark class="published">Published</mark></span>
+          <span>RAG · Knowledge graphs · Explainable AI</span>
+          <a href="notes/designing-hybrid-ai-systems.html">read →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-record featured-record-carousel" id="featured" aria-label="Featured experiment records">
+      <div class="record-carousel-top">
+        <div>
+          <h2>Flip through selected experiment records.</h2>
+        </div>
+
+      </div>
+
+      <div class="record-stage" id="recordStage">
+          <article class="record-slide active" data-record-index="0" aria-hidden="false">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-001 · Underwriting Decision Safety Lab</h2>
+              </div>
+              <a class="record-link" href="projects/underwriting-decision-safety-lab.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can an underwriting model know when to defer uncertain decisions to human review?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Train a probability model, evaluate calibration, select abstention thresholds, validate inputs, and expose review decisions through generated artifacts and a dashboard.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Metrics, reliability diagrams, coverage curves, policy variants, slice reports, tests, CI, and generated prediction files.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Risk-aware ML design, calibration, selective prediction, governance-minded evaluation, and dashboard communication.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>loan data</span>
+                <i></i>
+                <span>validation</span>
+                <i></i>
+                <span>probability model</span>
+                <i></i>
+                <span>calibration</span>
+                <i></i>
+                <span>abstention</span>
+                <i></i>
+                <span>slice report</span>
+                <i></i>
+                <span>review UI</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="1" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-002 · Financial Fraud Risk Engine</h2>
+              </div>
+              <a class="record-link" href="projects/financial-fraud-risk-engine.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>How can fraud-risk scores become analyst-review decisions instead of just model outputs?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Generate realistic synthetic transactions, train a fraud-risk pipeline, search cost-sensitive thresholds, produce policy artifacts, and score transactions for analyst review.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>ROC/PR curves, Brier score, threshold policy files, scored CSVs, reason codes, dashboard helpers, unit tests, and CI smoke workflows.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Risk modeling, class-imbalance evaluation, threshold policy thinking, explainability, and operational workflow design.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>transactions</span>
+                <i></i>
+                <span>validation</span>
+                <i></i>
+                <span>fraud model</span>
+                <i></i>
+                <span>threshold search</span>
+                <i></i>
+                <span>policy artifacts</span>
+                <i></i>
+                <span>reason codes</span>
+                <i></i>
+                <span>dashboard</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="2" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-003 · Graph-RAG Engine</h2>
+              </div>
+              <a class="record-link" href="projects/graph-rag-engine.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can retrieval paths make RAG answers more explainable, grounded, and easier to inspect?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Chunk documents, embed text, build an in-memory knowledge graph, retrieve with vector and graph signals, and expose inspectable answers through API/UI layers.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Retrieval metrics, golden-query evaluation, citations, graph paths, API contracts, tests, CI, and optional LLM fallback behavior.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Applied AI architecture, retrieval evaluation, system thinking, and explainable AI output design.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>documents</span>
+                <i></i>
+                <span>chunks</span>
+                <i></i>
+                <span>embeddings</span>
+                <i></i>
+                <span>knowledge graph</span>
+                <i></i>
+                <span>hybrid retriever</span>
+                <i></i>
+                <span>citations</span>
+                <i></i>
+                <span>answer UI</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="3" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-004 · Synthetic Data Artist</h2>
+              </div>
+              <a class="record-link" href="projects/synthetic-data-artist.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Which synthetic data method better preserves the behavior of real tabular data?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Generate synthetic data with Copula and VAE methods, then compare outputs against real data using statistical, visual, privacy, and ML-utility diagnostics.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Distribution overlap, categorical similarity, correlation difference, boundary violations, nearest-neighbor privacy proxy, PCA plots, pairplots, and quality summaries.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Model comparison, evaluation design, data quality reasoning, CLI workflows, and transparent reporting.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>real data</span>
+                <i></i>
+                <span>schema detection</span>
+                <i></i>
+                <span>generator</span>
+                <i></i>
+                <span>synthetic data</span>
+                <i></i>
+                <span>quality metrics</span>
+                <i></i>
+                <span>plots</span>
+                <i></i>
+                <span>report</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="4" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-005 · Movie Recommendation System</h2>
+              </div>
+              <a class="record-link" href="projects/movie-recommendation-system.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>When does a hybrid recommender actually beat simple recommendation baselines?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Generate deterministic synthetic movies and ratings, train content/collaborative/hybrid recommenders, compare against baselines, and tune hybrid alpha by NDCG.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Precision@K, Recall@K, NDCG@K, baseline comparison CSV, alpha sweep plot, structured recommendation CSVs, tests, and CI.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>Recommender evaluation, baseline discipline, reproducibility, metric interpretation, and user-facing recommendation output design.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>movies</span>
+                <i></i>
+                <span>ratings</span>
+                <i></i>
+                <span>split</span>
+                <i></i>
+                <span>content model</span>
+                <i></i>
+                <span>SVD model</span>
+                <i></i>
+                <span>hybrid sweep</span>
+                <i></i>
+                <span>recommendations</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="5" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-006 · Fake News Detector</h2>
+              </div>
+              <a class="record-link" href="projects/fake-news-detector.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>How far can a clean classical NLP pipeline go for fake-vs-real news classification?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Clean article text, vectorize with TF-IDF, train a logistic-regression classifier, evaluate metrics, and expose predictions through a small app.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>Saved model/vectorizer artifacts, metrics, charts, probability outputs, example predictions, and app behavior.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>NLP preprocessing, classification, baseline modeling, metric communication, and applied ML app delivery.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>news text</span>
+                <i></i>
+                <span>cleaning</span>
+                <i></i>
+                <span>TF-IDF</span>
+                <i></i>
+                <span>classifier</span>
+                <i></i>
+                <span>metrics</span>
+                <i></i>
+                <span>artifacts</span>
+                <i></i>
+                <span>app</span>
+            </div>
+          </article>
+          <article class="record-slide" data-record-index="6" aria-hidden="true">
+            <div class="record-header">
+              <div>
+                <p class="terminal-label">02 / FEATURED RECORD</p>
+                <h2>EXP-007 · Coffee Shop Profit Predictor</h2>
+              </div>
+              <a class="record-link" href="projects/coffee-shop-profit-predictor.html">open record →</a>
+            </div>
+
+            <div class="record-grid">
+              <article class="record-card large">
+                <span>Question</span>
+                <p>Can SQL features and interpretable regression support site-selection decisions?</p>
+              </article>
+              <article class="record-card">
+                <span>Method</span>
+                <p>Build location-level features in SQLite, train regression models, compare against baselines, validate performance, and score candidate locations with risk notes.</p>
+              </article>
+              <article class="record-card">
+                <span>Evidence</span>
+                <p>R²/MAE metrics, cross-validation, baseline comparison, residual plots, feature importance, candidate predictions, tests, and CI.</p>
+              </article>
+              <article class="record-card">
+                <span>What it proves</span>
+                <p>SQL analytics, feature engineering, regression modeling, business communication, and model-risk awareness.</p>
+              </article>
+            </div>
+
+            <div class="architecture-strip">
+              <span>location data</span>
+                <i></i>
+                <span>SQLite features</span>
+                <i></i>
+                <span>model comparison</span>
+                <i></i>
+                <span>validation</span>
+                <i></i>
+                <span>diagnostics</span>
+                <i></i>
+                <span>candidate scoring</span>
+            </div>
+          </article>
+      </div>
+
+      <div class="record-switcher-bar">
+        <button class="record-prev-modern record-cycle-button" type="button" id="recordPrevModern">
+          <strong class="arrow-orb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M19 12H7"></path>
+              <path d="M11 6l-6 6 6 6"></path>
+            </svg>
+          </strong>
+          <span>Previous record</span>
+        </button>
+
+        <button class="record-next-modern record-cycle-button" type="button" id="recordNextModern">
+          <span>Next record</span>
+          <strong class="arrow-orb" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M5 12h12"></path>
+              <path d="M13 6l6 6-6 6"></path>
+            </svg>
+          </strong>
+        </button>
+      </div>
+
+      <div class="record-selector" aria-label="Featured record selector">
+          <button class="record-tab active" type="button" data-record-target="0" aria-label="Show EXP-001" aria-pressed="true">EXP-001</button>
+          <button class="record-tab" type="button" data-record-target="1" aria-label="Show EXP-002" aria-pressed="false">EXP-002</button>
+          <button class="record-tab" type="button" data-record-target="2" aria-label="Show EXP-003" aria-pressed="false">EXP-003</button>
+          <button class="record-tab" type="button" data-record-target="3" aria-label="Show EXP-004" aria-pressed="false">EXP-004</button>
+          <button class="record-tab" type="button" data-record-target="4" aria-label="Show EXP-005" aria-pressed="false">EXP-005</button>
+          <button class="record-tab" type="button" data-record-target="5" aria-label="Show EXP-006" aria-pressed="false">EXP-006</button>
+          <button class="record-tab" type="button" data-record-target="6" aria-label="Show EXP-007" aria-pressed="false">EXP-007</button>
+      </div>
+    </section>
+
+    <section class="notes-section" id="notes">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">03 / TECHNICAL ESSAYS</p>
+          <h2>Technical essays from my data science notebook.</h2>
+        </div>
+        <p>
+          These essays capture how I think about reliable data, model behavior,
+          evaluation, metrics, and AI systems beyond the code.
+        </p>
+      </div>
+
+      <div class="note-list">
+        <article>
+          <span>NOTE-001</span>
+          <h3><a href="notes/machine-learning-warning-systems.html">Machine Learning Warning Systems</a></h3>
+          <p>Why ML systems should warn instead of decide, with practical patterns for human agency, auditability, and risk-aware interfaces.</p>
+        </article>
+        <article>
+          <span>NOTE-002</span>
+          <h3><a href="notes/coverage-is-the-silent-killer.html">Coverage Is the Silent Killer</a></h3>
+          <p>How clean dashboards can tell false stories when data does not represent the full population, calendar, or process.</p>
+        </article>
+        <article>
+          <span>NOTE-003</span>
+          <h3><a href="notes/kpi-denominator-truth.html">KPI Denominator Truth</a></h3>
+          <p>Why ratio metrics fail when their denominator changes, and how to design more decision-safe KPI contracts.</p>
+        </article>
+        <article>
+          <span>NOTE-004</span>
+          <h3><a href="notes/abstention-is-a-product-feature.html">Abstention Is a Product Feature</a></h3>
+          <p>How selective prediction, calibration, and human review turn uncertainty into safer product design.</p>
+        </article>
+        <article>
+          <span>NOTE-005</span>
+          <h3><a href="notes/designing-hybrid-ai-systems.html">Designing Hybrid AI Systems</a></h3>
+          <p>How vector search, knowledge graphs, and RAG can work together to produce more explainable AI systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="system-map-section" id="system-map">
+      <div class="section-header">
+        <div>
+          <p class="terminal-label">04 / SYSTEM MAP</p>
+          <h2>How I think about data science systems.</h2>
+        </div>
+      </div>
+
+      <div class="system-map">
+        <div><span>01</span><strong>Problem</strong><p>Define the decision, uncertainty, and success criteria.</p></div>
+        <b></b>
+        <div><span>02</span><strong>Data</strong><p>Inspect, clean, transform, validate, and document assumptions.</p></div>
+        <b></b>
+        <div><span>03</span><strong>Model</strong><p>Train baselines, compare methods, and evaluate honestly.</p></div>
+        <b></b>
+        <div><span>04</span><strong>Interface</strong><p>Expose results through dashboards, APIs, reports, or tools.</p></div>
+        <b></b>
+        <div><span>05</span><strong>Decision</strong><p>Communicate limits, tradeoffs, and recommended next actions.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-panel">
+      <div>
+        <p class="terminal-label">amir@lab:~$ connect</p>
+        <h2>This is my technical lab for experiments, systems, and notes. My main portfolio lives on honardoust.me.</h2>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://honardoust.me/" target="_blank" rel="noopener">Main portfolio</a>
+        <a class="btn btn-secondary" href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/honardoust/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amir Honardoust · lab index</p>
+    <div>
+      <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Back to top</a>
+      <a href="https://honardoust.me/" target="_blank" rel="noopener">honardoust.me</a>
+      <a href="https://github.com/AmirhosseinHonardoust" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
