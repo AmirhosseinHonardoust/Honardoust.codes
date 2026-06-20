@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fake News Detector | honardoust.codes</title>
-  <meta name="description" content="A classical NLP pipeline for fake-vs-real news detection with text cleaning, TF-IDF features, logistic regression, saved artifacts, evaluation outputs, and a Streamlit interface." />
+  <meta name="description" content="A responsible NLP pipeline that turns news text into a style-risk signal: TF-IDF + Logistic Regression with honest evaluation, dataset-leakage analysis, leakage-controlled training, a REAL/FAKE/UNCERTAIN decision band, checksum-verified model loading, a Streamlit dashboard, and CLI inference." />
   <meta name="author" content="Amir Honardoust" />
   <meta name="theme-color" content="#030712" />
   <link rel="canonical" href="https://honardoust.codes/projects/fake-news-detector.html" />
   <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=3">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=3">
   <meta property="og:title" content="Fake News Detector | honardoust.codes" />
-  <meta property="og:description" content="A classical NLP pipeline for fake-vs-real news detection with text cleaning, TF-IDF features, logistic regression, saved artifacts, evaluation outputs, and a Streamlit interface." />
+  <meta property="og:description" content="A responsible NLP pipeline that turns news text into a style-risk signal: TF-IDF + Logistic Regression with honest evaluation, dataset-leakage analysis, leakage-controlled training, a REAL/FAKE/UNCERTAIN decision band, checksum-verified model loading, a Streamlit dashboard, and CLI inference." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://honardoust.codes/projects/fake-news-detector.html" />
   <meta property="og:image" content="https://honardoust.codes/assets/og-image.png" />
@@ -34,7 +34,7 @@
         <div>
           <p class="detail-kicker">EXP-006 / NLP Pipeline / Published</p>
           <h1>Fake News Detector</h1>
-          <p class="detail-lede">A classical NLP pipeline for fake-vs-real news detection with text cleaning, TF-IDF features, logistic regression, saved artifacts, evaluation outputs, and a Streamlit interface.</p>
+          <p class="detail-lede">A responsible NLP pipeline that turns news text into a style-risk signal: TF-IDF + Logistic Regression with honest evaluation, dataset-leakage analysis, leakage-controlled training, a REAL/FAKE/UNCERTAIN decision band, checksum-verified model loading, a Streamlit dashboard, and CLI inference.</p>
         </div>
 
         <aside class="detail-metadata" aria-label="Project metadata">
@@ -60,18 +60,19 @@
         <section class="detail-section-card" id="question">
           <p class="terminal-label">EXP-006 / question</p>
           <h2>Technical question</h2>
-          <p>How far can a clean classical NLP pipeline go for fake-vs-real news classification?</p>
+          <p>How far can a clean classical NLP pipeline go for fake-vs-real news classification &mdash; and how do you keep it honest about dataset leakage?</p>
         </section>
 
         <section class="detail-section-card" id="method">
           <p class="terminal-label">EXP-006 / method</p>
           <h2>Method and workflow</h2>
           <ol>
-            <li>Clean text and normalize inputs for feature extraction.</li>
-            <li>Build sparse TF-IDF features from article content.</li>
-            <li>Train a classical classifier and save reusable artifacts.</li>
-            <li>Evaluate classification behavior with standard metrics and plots.</li>
-            <li>Expose predictions through an interactive Streamlit app.</li>
+            <li>Clean text with a pipeline-embedded cleaner so training and inference normalize inputs identically (no train/serve skew).</li>
+            <li>Build sparse TF-IDF word n-gram features and train a Logistic Regression baseline.</li>
+            <li>Run a dataset-leakage report and a source-confounding diagnostic, then optionally strip source artifacts for leakage-controlled training.</li>
+            <li>Evaluate with accuracy, macro F1, ROC-AUC, and PR-AUC, including out-of-source evaluation when the data permits.</li>
+            <li>Return REAL / FAKE / UNCERTAIN with a configurable uncertainty band, and load models with checksum verification.</li>
+            <li>Expose predictions through a Streamlit dashboard and a CLI.</li>
           </ol>
           <div class="pipeline">
             <span>news text</span>
@@ -94,9 +95,9 @@
           <p class="terminal-label">EXP-006 / evidence</p>
           <h2>Evidence of work</h2>
           <div class="detail-grid-3">
-            <div class="detail-mini-card"><span>NLP pipeline</span><p>Text cleaning, vectorization, modeling, and inference are separated into a reproducible workflow.</p></div>
-            <div class="detail-mini-card"><span>Interpretability</span><p>Linear-model weights can be inspected to understand influential tokens.</p></div>
-            <div class="detail-mini-card"><span>Deployment path</span><p>Saved artifacts and a Streamlit interface make the classifier easy to demo.</p></div>
+            <div class="detail-mini-card"><span>Leakage &amp; confounding</span><p>A leakage report flags source artifacts (such as a "contains Reuters" heuristic) and a confounding score quantifies how strongly the source predicts the label.</p></div>
+            <div class="detail-mini-card"><span>Calibrated uncertainty</span><p>Outputs are REAL / FAKE / UNCERTAIN with a configurable band, and out-of-source evaluation reports infeasibility when the data cannot support it.</p></div>
+            <div class="detail-mini-card"><span>Reproducible &amp; verified</span><p>Pipeline-embedded cleaning avoids train/serve skew, models load with checksum verification, and pytest with GitHub Actions guards the workflow.</p></div>
           </div>
         </section>
 
@@ -104,7 +105,7 @@
           <p class="terminal-label">EXP-006 / stack</p>
           <h2>Technical stack</h2>
           <div class="tag-row">
-            <span>Python</span><span>pandas</span><span>scikit-learn</span><span>NLTK</span><span>Streamlit</span><span>matplotlib</span><span>joblib</span>
+            <span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>Streamlit</span><span>matplotlib</span><span>joblib</span><span>pytest</span><span>Ruff</span><span>GitHub Actions</span>
           </div>
           <a class="btn btn-primary repo-cta" href="https://github.com/AmirhosseinHonardoust/Fake-News-Detector" target="_blank" rel="noopener">Open repository ↗</a>
         </section>
