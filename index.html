@@ -30,6 +30,7 @@
 </head>
 
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="noise"></div>
@@ -56,7 +57,7 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-left">
+      <div class="hero-left" data-reveal>
         <p class="terminal-label">amir@honardoust.codes:~$ ./open-lab-index</p>
         <h1>Technical work, organized as experiment records.</h1>
         <p class="hero-copy">
@@ -66,7 +67,7 @@
 
         <div class="command-search" aria-label="Visual command search">
           <span>$</span>
-          <code>list experiments --status published --tag evaluation</code>
+          <code id="heroCommand">list experiments --status published</code>
         </div>
 
         <div class="hero-actions">
@@ -76,7 +77,7 @@
         </div>
       </div>
 
-      <aside class="status-panel" aria-label="Lab status">
+      <aside class="status-panel" aria-label="Lab status" data-reveal>
         <div class="panel-toolbar">
           <span></span><span></span><span></span>
           <strong>lab.status</strong>
@@ -108,6 +109,20 @@
         </p>
       </div>
 
+      <div class="lab-controls" data-reveal>
+        <label class="lab-search">
+          <span class="prompt" aria-hidden="true">$</span>
+          <span class="sr-only">Search records</span>
+          <input type="search" id="labSearch" placeholder="grep records --match …" autocomplete="off" spellcheck="false" />
+        </label>
+        <div class="lab-chips" role="group" aria-label="Filter records by kind">
+          <button class="lab-chip is-active" type="button" data-kind="all" aria-pressed="true">all</button>
+          <button class="lab-chip" type="button" data-kind="exp" aria-pressed="false">experiments</button>
+          <button class="lab-chip" type="button" data-kind="note" aria-pressed="false">essays</button>
+        </div>
+        <span class="lab-count" id="labCount" aria-live="polite"></span>
+      </div>
+
       <div class="lab-table" role="table" aria-label="Lab index records">
         <div class="lab-row lab-head" role="row">
           <span>ID</span>
@@ -118,7 +133,7 @@
           <span>Open</span>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-001</span>
           <span>Underwriting Decision Safety Lab</span>
           <span>Decision Safety</span>
@@ -127,7 +142,7 @@
           <a href="projects/underwriting-decision-safety-lab.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-002</span>
           <span>Financial Fraud Risk Engine</span>
           <span>Risk Modeling</span>
@@ -136,7 +151,7 @@
           <a href="projects/financial-fraud-risk-engine.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-003</span>
           <span>Graph-RAG Engine</span>
           <span>AI System</span>
@@ -145,7 +160,7 @@
           <a href="projects/graph-rag-engine.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-004</span>
           <span>Synthetic Data Artist</span>
           <span>Evaluation Lab</span>
@@ -154,7 +169,7 @@
           <a href="projects/synthetic-data-artist.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-005</span>
           <span>Movie Recommendation System</span>
           <span>Recommender System</span>
@@ -163,7 +178,7 @@
           <a href="projects/movie-recommendation-system.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-006</span>
           <span>Fake News Detector</span>
           <span>NLP Pipeline</span>
@@ -172,7 +187,7 @@
           <a href="projects/fake-news-detector.html">detail →</a>
         </div>
 
-        <div class="lab-row" role="row">
+        <div class="lab-row" role="row" data-kind="exp">
           <span class="id">EXP-007</span>
           <span>Coffee Shop Profit Predictor</span>
           <span>Business Analytics</span>
@@ -181,7 +196,7 @@
           <a href="projects/coffee-shop-profit-predictor.html">detail →</a>
         </div>
 
-        <div class="lab-row note-row-link" role="row">
+        <div class="lab-row note-row-link" role="row" data-kind="note">
           <span class="id">NOTE-001</span>
           <span>Machine Learning Warning Systems</span>
           <span>Essay</span>
@@ -190,7 +205,7 @@
           <a href="notes/machine-learning-warning-systems.html">read →</a>
         </div>
 
-        <div class="lab-row note-row-link" role="row">
+        <div class="lab-row note-row-link" role="row" data-kind="note">
           <span class="id">NOTE-002</span>
           <span>Coverage Is the Silent Killer</span>
           <span>Essay</span>
@@ -199,7 +214,7 @@
           <a href="notes/coverage-is-the-silent-killer.html">read →</a>
         </div>
 
-        <div class="lab-row note-row-link" role="row">
+        <div class="lab-row note-row-link" role="row" data-kind="note">
           <span class="id">NOTE-003</span>
           <span>KPI Denominator Truth</span>
           <span>Essay</span>
@@ -208,7 +223,7 @@
           <a href="notes/kpi-denominator-truth.html">read →</a>
         </div>
 
-        <div class="lab-row note-row-link" role="row">
+        <div class="lab-row note-row-link" role="row" data-kind="note">
           <span class="id">NOTE-004</span>
           <span>Abstention Is a Product Feature</span>
           <span>Essay</span>
@@ -217,7 +232,7 @@
           <a href="notes/abstention-is-a-product-feature.html">read →</a>
         </div>
 
-        <div class="lab-row note-row-link" role="row">
+        <div class="lab-row note-row-link" role="row" data-kind="note">
           <span class="id">NOTE-005</span>
           <span>Designing Hybrid AI Systems</span>
           <span>Essay</span>
@@ -225,11 +240,14 @@
           <span>RAG · Knowledge graphs · Explainable AI</span>
           <a href="notes/designing-hybrid-ai-systems.html">read →</a>
         </div>
-      </div>
+              <div class="lab-empty" id="labEmpty" role="row">
+          no records match this query <span class="blink">&#9613;</span>
+        </div>
+</div>
     </section>
 
     <section class="featured-record featured-record-carousel" id="featured" aria-label="Featured experiment records">
-      <div class="record-carousel-top">
+      <div class="record-carousel-top" data-reveal>
         <div>
           <h2>Flip through selected experiment records.</h2>
         </div>
@@ -590,7 +608,7 @@
         </p>
       </div>
 
-      <div class="note-list">
+      <div class="note-list" data-reveal-stagger>
         <article>
           <span>NOTE-001</span>
           <h3><a href="notes/machine-learning-warning-systems.html">Machine Learning Warning Systems</a></h3>
@@ -627,7 +645,7 @@
         </div>
       </div>
 
-      <div class="system-map">
+      <div class="system-map" data-reveal-stagger>
         <div><span>01</span><strong>Problem</strong><p>Define the decision, uncertainty, and success criteria.</p></div>
         <b></b>
         <div><span>02</span><strong>Data</strong><p>Inspect, clean, transform, validate, and document assumptions.</p></div>
@@ -640,7 +658,7 @@
       </div>
     </section>
 
-    <section class="contact-panel">
+    <section class="contact-panel" data-reveal>
       <div>
         <p class="terminal-label">amir@lab:~$ connect</p>
         <h2>This is my technical lab for experiments, systems, and notes. My main portfolio lives on honardoust.me.</h2>
